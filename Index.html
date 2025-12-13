@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TJX Labs - Mobile Apps Built with Purpose</title>
+    <meta name="description" content="TJX Labs - Independent mobile app development studio creating practical solutions for everyday work challenges. Based in NSW, Australia.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 0 3rem;
+            color: white;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo-image {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .indie-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            margin-top: 0.5rem;
+        }
+
+        .about-section {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-section h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .about-section p {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .apps-section {
+            margin: 3rem 0;
+        }
+
+        .apps-section h2 {
+            color: white;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .app-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .app-content h3 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .app-subtitle {
+            color: #667eea;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .app-description {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .app-features {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-tag {
+            background: #f0f4ff;
+            color: #667eea;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .app-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .status-live {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status-coming {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: white;
+        }
+
+        footer p {
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-link {
+            color: white;
+            opacity: 0.9;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-link:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .logo-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .logo-image {
+                width: 100px;
+                height: 100px;
+            }
+
+            .app-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .app-icon {
+                margin: 0 auto;
+            }
+
+            .app-links {
+                justify-content: center;
+            }
+
+            .logo {
+                font-size: 2.2rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            .about-section {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="tjx-logo.png" alt="TJX Labs Logo" class="logo-image">
+                <div class="logo">TJX Labs</div>
+            </div>
+            <div class="tagline">Mobile Apps Built with Purpose</div>
+            <div class="indie-badge">🚀 Solo Indie Developer • NSW, Australia</div>
+        </header>
+
+        <div class="about-section">
+            <h2>About TJX Labs</h2>
+            <p>
+                Hey! I'm Brandon, the solo developer behind TJX Labs. I build mobile apps that solve real problems 
+                for real people. No corporate bureaucracy, no committees—just one developer focused on creating 
+                practical, well-crafted tools that make work life easier.
+            </p>
+            <p>
+                Every app that comes out of TJX Labs is built with care, tested thoroughly, and designed with the 
+                end user in mind. I believe in sustainable development, clean code, and apps that respect your 
+                privacy and actually work the way they should.
+            </p>
+        </div>
+
+        <div class="apps-section">
+            <h2>Apps</h2>
+
+            <div class="app-card">
+                <div class="app-icon">📊</div>
+                <div class="app-content">
+                    <h3>
+                        ShiftTrak
+                        <span class="status-badge status-live">Live on Google Play</span>
+                    </h3>
+                    <div class="app-subtitle">Work Shift Tracker</div>
+                    <div class="app-description">
+                        Track your work shifts with ease. Perfect for casual employees in warehouses, retail, 
+                        hospitality, healthcare, and any job with varying schedules. Log your hours, calculate 
+                        earnings, and stay organized—all in one simple app.
+                    </div>
+                    <div class="app-features">
+                        <span class="feature-tag">📅 Shift Logging</span>
+                        <span class="feature-tag">💰 Earnings Calculator</span>
+                        <span class="feature-tag">📊 Work History</span>
+                        <span class="feature-tag">🔒 Privacy-First</span>
+                    </div>
+                    <div class="app-links">
+                        <a href="https://tjxlabs.github.io/ShiftTrakApp/" class="btn btn-primary">Learn More</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.tjxlabs.shifttrak" class="btn btn-secondary">Download on Google Play</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="app-card">
+                <div class="app-icon">🚚</div>
+                <div class="app-content">
+                    <h3>
+                        Transport & Logistics App
+                        <span class="status-badge status-coming">In Development</span>
+                    </h3>
+                    <div class="app-subtitle">Employee & Employer Platform</div>
+                    <div class="app-description">
+                        A comprehensive solution for transport and logistics operations, featuring separate interfaces 
+                        for employees and employers. Real-time coordination, job tracking, and seamless communication—
+                        built for the unique demands of the transport industry.
+                    </div>
+                    <div class="app-features">
+                        <span class="feature-tag">👥 Dual Interface</span>
+                        <span class="feature-tag">⚡ Real-time Sync</span>
+                        <span class="feature-tag">📍 Job Tracking</span>
+                        <span class="feature-tag">☁️ Cloud-Powered</span>
+                    </div>
+                    <div class="app-links">
+                        <a href="#" class="btn btn-secondary" style="opacity: 0.6; cursor: not-allowed;">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>TJX Labs</strong></p>
+            <p>Independent mobile app development • New South Wales, Australia</p>
+            <p style="margin-top: 1rem;">
+                Questions or feedback? <a href="mailto:contact@tjxlabs.com" class="contact-link">Get in touch</a>
+            </p>
+            <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">
+                © 2024 TJX Labs. All rights reserved.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
