@@ -15,8 +15,8 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #e5e5e5;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             min-height: 100vh;
         }
 
@@ -44,50 +44,59 @@
             width: 120px;
             height: 120px;
             object-fit: contain;
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
         }
 
         .logo {
             font-size: 3rem;
             font-weight: 700;
             letter-spacing: -1px;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .tagline {
             font-size: 1.3rem;
-            opacity: 0.95;
+            opacity: 0.85;
             font-weight: 300;
             margin-bottom: 1rem;
+            color: #b0b0b0;
         }
 
         .indie-badge {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
             padding: 0.5rem 1.2rem;
             border-radius: 50px;
             font-size: 0.9rem;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             margin-top: 0.5rem;
+            color: #d0d0d0;
         }
 
         .about-section {
-            background: white;
+            background: linear-gradient(135deg, #2a2a2a 0%, #333333 100%);
             border-radius: 20px;
             padding: 3rem;
             margin: 2rem 0;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .about-section h2 {
-            color: #667eea;
+            color: #ffffff;
             margin-bottom: 1rem;
             font-size: 1.8rem;
         }
 
         .about-section p {
-            color: #555;
+            color: #b0b0b0;
             font-size: 1.1rem;
             margin-bottom: 1rem;
+            line-height: 1.8;
         }
 
         .apps-section {
@@ -102,12 +111,13 @@
         }
 
         .app-card {
-            background: white;
+            background: linear-gradient(135deg, #2a2a2a 0%, #333333 100%);
             border-radius: 20px;
             padding: 2.5rem;
             margin-bottom: 2rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             display: grid;
             grid-template-columns: auto 1fr;
             gap: 2rem;
@@ -116,36 +126,38 @@
 
         .app-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
         .app-icon {
             width: 100px;
             height: 100px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #404040 0%, #505050 100%);
             border-radius: 22px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 3rem;
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .app-content h3 {
-            color: #333;
+            color: #ffffff;
             font-size: 1.8rem;
             margin-bottom: 0.5rem;
         }
 
         .app-subtitle {
-            color: #667eea;
+            color: #a0a0a0;
             font-size: 1rem;
             margin-bottom: 1rem;
             font-weight: 500;
         }
 
         .app-description {
-            color: #666;
+            color: #b0b0b0;
             font-size: 1rem;
             margin-bottom: 1.5rem;
             line-height: 1.7;
@@ -159,12 +171,13 @@
         }
 
         .feature-tag {
-            background: #f0f4ff;
-            color: #667eea;
+            background: rgba(255, 255, 255, 0.1);
+            color: #d0d0d0;
             padding: 0.4rem 1rem;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .app-links {
@@ -184,24 +197,27 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #505050 0%, #606060 100%);
             color: white;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+            background: linear-gradient(135deg, #606060 0%, #707070 100%);
         }
 
         .btn-secondary {
-            background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
+            background: rgba(255, 255, 255, 0.05);
+            color: #e0e0e0;
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
         .btn-secondary:hover {
-            background: #667eea;
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
             color: white;
         }
 
@@ -215,19 +231,49 @@
         }
 
         .status-live {
-            background: #dcfce7;
-            color: #166534;
+            background: rgba(34, 197, 94, 0.2);
+            color: #4ade80;
+            border: 1px solid rgba(34, 197, 94, 0.3);
         }
 
         .status-coming {
-            background: #fef3c7;
-            color: #92400e;
+            background: rgba(234, 179, 8, 0.2);
+            color: #fbbf24;
+            border: 1px solid rgba(234, 179, 8, 0.3);
+        }
+
+        .coming-soon-section {
+            background: linear-gradient(135deg, #2a2a2a 0%, #333333 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .coming-soon-section h2 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .coming-soon-section p {
+            color: #b0b0b0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .coming-soon-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
         }
 
         footer {
             text-align: center;
             padding: 3rem 0;
-            color: white;
+            color: #b0b0b0;
         }
 
         footer p {
@@ -236,15 +282,17 @@
         }
 
         .contact-link {
-            color: white;
+            color: #d0d0d0;
             opacity: 0.9;
             text-decoration: none;
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            transition: opacity 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .contact-link:hover {
             opacity: 1;
+            color: white;
+            border-bottom-color: rgba(255, 255, 255, 0.6);
         }
 
         @media (max-width: 768px) {
@@ -279,7 +327,7 @@
                 font-size: 1.1rem;
             }
 
-            .about-section {
+            .about-section, .coming-soon-section {
                 padding: 2rem;
             }
         }
@@ -320,49 +368,36 @@
                         ShiftTrak
                         <span class="status-badge status-live">Live on Google Play</span>
                     </h3>
-                    <div class="app-subtitle">Work Shift Tracker</div>
+                    <div class="app-subtitle">Australian Work Shift Tracker & Pay Calculator</div>
                     <div class="app-description">
-                        Track your work shifts with ease. Perfect for casual employees in warehouses, retail, 
-                        hospitality, healthcare, and any job with varying schedules. Log your hours, calculate 
-                        earnings, and stay organized—all in one simple app.
+                        The complete shift tracking solution for Australian workers. Built specifically for casual 
+                        employees across all industries—track your shifts, calculate earnings with accurate Australian 
+                        tax and penalty rates, and manage your work schedule with confidence. Privacy-first design 
+                        keeps all your data local on your device.
                     </div>
                     <div class="app-features">
                         <span class="feature-tag">📅 Shift Logging</span>
-                        <span class="feature-tag">💰 Earnings Calculator</span>
+                        <span class="feature-tag">💰 Australian Tax Calculator</span>
+                        <span class="feature-tag">⏰ Penalty Rates</span>
                         <span class="feature-tag">📊 Work History</span>
-                        <span class="feature-tag">🔒 Privacy-First</span>
+                        <span class="feature-tag">🔒 100% Private</span>
+                        <span class="feature-tag">🇦🇺 Made for Australia</span>
                     </div>
                     <div class="app-links">
                         <a href="https://tjxlabs.github.io/ShiftTrakApp/" class="btn btn-primary">Learn More</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.tjxlabs.shifttrak" class="btn btn-secondary">Download on Google Play</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.tjxlabs.shifttrak" class="btn btn-secondary" target="_blank" rel="noopener">Get it on Google Play</a>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="app-card">
-                <div class="app-icon">🚚</div>
-                <div class="app-content">
-                    <h3>
-                        Transport & Logistics App
-                        <span class="status-badge status-coming">In Development</span>
-                    </h3>
-                    <div class="app-subtitle">Employee & Employer Platform</div>
-                    <div class="app-description">
-                        A comprehensive solution for transport and logistics operations, featuring separate interfaces 
-                        for employees and employers. Real-time coordination, job tracking, and seamless communication—
-                        built for the unique demands of the transport industry.
-                    </div>
-                    <div class="app-features">
-                        <span class="feature-tag">👥 Dual Interface</span>
-                        <span class="feature-tag">⚡ Real-time Sync</span>
-                        <span class="feature-tag">📍 Job Tracking</span>
-                        <span class="feature-tag">☁️ Cloud-Powered</span>
-                    </div>
-                    <div class="app-links">
-                        <a href="#" class="btn btn-secondary" style="opacity: 0.6; cursor: not-allowed;">Coming Soon</a>
-                    </div>
-                </div>
-            </div>
+        <div class="coming-soon-section">
+            <div class="coming-soon-icon">🚀</div>
+            <h2>More Apps Coming Soon</h2>
+            <p>
+                I'm constantly working on new solutions to make work life easier. Stay tuned for more practical, 
+                well-crafted mobile apps designed with the same care and attention to detail as ShiftTrak.
+            </p>
         </div>
 
         <footer>
