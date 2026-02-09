@@ -3,413 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TJX Labs - Mobile Apps Built with Purpose</title>
-    <meta name="description" content="TJX Labs - Independent mobile app development studio creating practical solutions for everyday work challenges. Based in NSW, Australia.">
+    <title>TJX Labs | Mobile Apps Built with Purpose</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        
+        :root { font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: #050505; color: #fafafa; overflow-x: hidden; }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #e5e5e5;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            min-height: 100vh;
-        }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .hero-gradient { background: radial-gradient(circle at 50% 0%, rgba(79, 70, 229, 0.15) 0%, transparent 50%); }
+        
+        .bento-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .bento-card:hover { transform: translateY(-8px); border-color: rgba(99, 102, 241, 0.4); background: rgba(255, 255, 255, 0.05); }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        header {
-            text-align: center;
-            padding: 4rem 0 3rem;
-            color: white;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .logo-image {
-            width: 120px;
-            height: 120px;
-            object-fit: contain;
-            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
-        }
-
-        .logo {
-            font-size: 3rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .tagline {
-            font-size: 1.3rem;
-            opacity: 0.85;
-            font-weight: 300;
-            margin-bottom: 1rem;
-            color: #b0b0b0;
-        }
-
-        .indie-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            margin-top: 0.5rem;
-            color: #d0d0d0;
-        }
-
-        .about-section {
-            background: linear-gradient(135deg, #2a2a2a 0%, #333333 100%);
-            border-radius: 20px;
-            padding: 3rem;
-            margin: 2rem 0;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .about-section h2 {
-            color: #ffffff;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-
-        .about-section p {
-            color: #b0b0b0;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        .apps-section {
-            margin: 3rem 0;
-        }
-
-        .apps-section h2 {
-            color: white;
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .app-card {
-            background: linear-gradient(135deg, #2a2a2a 0%, #333333 100%);
-            border-radius: 20px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .app-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .app-icon {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #404040 0%, #505050 100%);
-            border-radius: 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .app-content h3 {
-            color: #ffffff;
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .app-subtitle {
-            color: #a0a0a0;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-
-        .app-description {
-            color: #b0b0b0;
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .app-features {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-tag {
-            background: rgba(255, 255, 255, 0.1);
-            color: #d0d0d0;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .app-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.8rem;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #505050 0%, #606060 100%);
-            color: white;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
-            background: linear-gradient(135deg, #606060 0%, #707070 100%);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: #e0e0e0;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.3);
-            color: white;
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-left: 0.5rem;
-        }
-
-        .status-live {
-            background: rgba(34, 197, 94, 0.2);
-            color: #4ade80;
-            border: 1px solid rgba(34, 197, 94, 0.3);
-        }
-
-        .status-coming {
-            background: rgba(234, 179, 8, 0.2);
-            color: #fbbf24;
-            border: 1px solid rgba(234, 179, 8, 0.3);
-        }
-
-        .coming-soon-section {
-            background: linear-gradient(135deg, #2a2a2a 0%, #333333 100%);
-            border-radius: 20px;
-            padding: 3rem;
-            margin: 2rem 0;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-        }
-
-        .coming-soon-section h2 {
-            color: #ffffff;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .coming-soon-section p {
-            color: #b0b0b0;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .coming-soon-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            opacity: 0.8;
-        }
-
-        footer {
-            text-align: center;
-            padding: 3rem 0;
-            color: #b0b0b0;
-        }
-
-        footer p {
-            opacity: 0.9;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-link {
-            color: #d0d0d0;
-            opacity: 0.9;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .contact-link:hover {
-            opacity: 1;
-            color: white;
-            border-bottom-color: rgba(255, 255, 255, 0.6);
-        }
-
-        @media (max-width: 768px) {
-            .logo-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .logo-image {
-                width: 100px;
-                height: 100px;
-            }
-
-            .app-card {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .app-icon {
-                margin: 0 auto;
-            }
-
-            .app-links {
-                justify-content: center;
-            }
-
-            .logo {
-                font-size: 2.2rem;
-            }
-
-            .tagline {
-                font-size: 1.1rem;
-            }
-
-            .about-section, .coming-soon-section {
-                padding: 2rem;
-            }
-        }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0px); } }
+        .floating { animation: float 6s ease-in-out infinite; }
+        
+        .text-gradient { background: linear-gradient(to right, #fff 30%, #a5b4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <div class="logo-container">
-                <img src="tjx-logo.png" alt="TJX Labs Logo" class="logo-image">
-                <div class="logo">TJX Labs</div>
-            </div>
-            <div class="tagline">Mobile Apps Built with Purpose</div>
-            <div class="indie-badge">🚀 Solo Indie Developer • NSW, Australia</div>
-        </header>
+<body class="selection:bg-indigo-500/30">
 
-        <div class="about-section">
-            <h2>About TJX Labs</h2>
-            <p>
-                Hey! I'm Brandon, the solo developer behind TJX Labs. I build mobile apps that solve real problems 
-                for real people. No corporate bureaucracy, no committees—just one developer focused on creating 
-                practical, well-crafted tools that make work life easier.
+    <div class="fixed inset-0 -z-10">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-600/10 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600/10 blur-[120px] rounded-full"></div>
+    </div>
+
+    <nav class="sticky top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-3">
+            <div class="flex items-center gap-3 font-extrabold text-xl tracking-tighter">
+                <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                    <i data-lucide="box" class="text-black w-5 h-5"></i>
+                </div>
+                <span>TJX <span class="text-indigo-400">LABS</span></span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+                <a href="#about" class="hover:text-white transition">About</a>
+                <a href="#apps" class="hover:text-white transition">Apps</a>
+                <a href="mailto:tjxlabs@gmail.com" class="hover:text-white transition">Contact</a>
+            </div>
+            <a href="https://github.com/tjxlabs" class="bg-white text-black px-5 py-2 rounded-xl text-xs font-bold hover:scale-105 transition">GITHUB</a>
+        </div>
+    </nav>
+
+    <header class="relative pt-32 pb-20 px-6 hero-gradient">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-bold uppercase tracking-widest mb-8">
+                <i data-lucide="map-pin" class="w-3 h-3"></i> NSW, Australia
+            </div>
+            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-[1.1]">
+                Mobile Apps Built <br><span class="text-gradient">with Purpose.</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                Independent studio creating practical solutions for everyday work challenges. No corporate bloat—just clean, functional code.
             </p>
-            <p>
-                Every app that comes out of TJX Labs is built with care, tested thoroughly, and designed with the 
-                end user in mind. I believe in sustainable development, clean code, and apps that respect your 
-                privacy and actually work the way they should.
-            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#apps" class="bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-[0_0_40px_-10px_rgba(79,70,229,0.6)] transition">Explore Apps</a>
+                <div class="px-8 py-4 glass rounded-2xl font-bold text-lg flex items-center gap-2">
+                    <i data-lucide="user" class="text-indigo-400 w-5 h-5"></i> Solo Indie Studio
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="md:col-span-2 glass p-10 rounded-[2.5rem] bento-card">
+                <h2 class="text-3xl font-bold mb-6">About the Lab</h2>
+                <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                    Hey! I'm <span class="text-white font-semibold">Brandon</span>, the solo developer behind TJX Labs. I build mobile apps that solve real problems for real people. 
+                </p>
+                <p class="text-gray-400 text-lg leading-relaxed">
+                    I believe in sustainable development, clean code, and apps that respect your privacy. No committees, no bureaucracy—just focused craft.
+                </p>
+            </div>
+            <div class="glass p-10 rounded-[2.5rem] bento-card flex flex-col justify-center items-center text-center">
+                <div class="w-20 h-20 bg-indigo-500/20 rounded-3xl flex items-center justify-center mb-6">
+                    <i data-lucide="heart" class="text-indigo-400 w-10 h-10"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">User First</h3>
+                <p class="text-sm text-gray-500 uppercase tracking-widest font-bold">Privacy-focused by design</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="apps" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="flex items-end justify-between mb-16">
+            <div>
+                <h2 class="text-5xl font-black italic tracking-tighter">THE APPS</h2>
+                <p class="text-gray-500 mt-2 font-medium">Production-ready tools for your daily workflow.</p>
+            </div>
+            <div class="hidden md:block h-px flex-1 bg-white/10 mx-10"></div>
         </div>
 
-        <div class="apps-section">
-            <h2>Apps</h2>
+        <div class="group relative">
+            <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-[3rem] blur opacity-10 group-hover:opacity-30 transition duration-1000"></div>
+            <div class="relative glass p-8 md:p-12 rounded-[3rem] grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-2xl flex items-center justify-center text-3xl shadow-lg">📊</div>
+                        <div>
+                            <h3 class="text-3xl font-bold">ShiftTrak</h3>
+                            <span class="text-xs font-bold text-emerald-400 bg-emerald-400/10 px-3 py-1 rounded-full uppercase tracking-tighter">Live on Google Play</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                        The complete shift tracking solution for Australian workers. Track shifts, calculate earnings with penalty rates, and manage schedules with confidence.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="bg-white/5 p-4 rounded-2xl border border-white/5">
+                            <p class="text-[10px] text-gray-500 uppercase font-black mb-1">Frequency</p>
+                            <p class="text-white font-bold text-sm">Multiple Daily Logs</p>
+                        </div>
+                        <div class="bg-white/5 p-4 rounded-2xl border border-white/5">
+                            <p class="text-[10px] text-gray-500 uppercase font-black mb-1">Target</p>
+                            <p class="text-white font-bold text-sm">Casual Employees</p>
+                        </div>
+                    </div>
 
-            <div class="app-card">
-                <div class="app-icon">📊</div>
-                <div class="app-content">
-                    <h3>
-                        ShiftTrak
-                        <span class="status-badge status-live">Live on Google Play</span>
-                    </h3>
-                    <div class="app-subtitle">Australian Work Shift Tracker & Pay Calculator</div>
-                    <div class="app-description">
-                        The complete shift tracking solution for Australian workers. Built specifically for casual 
-                        employees across all industries—track your shifts, calculate earnings with accurate Australian 
-                        tax and penalty rates, and manage your work schedule with confidence. Privacy-first design 
-                        keeps all your data local on your device.
+                    <div class="flex flex-wrap gap-2 mb-10">
+                        <span class="px-4 py-1.5 bg-white/5 rounded-full text-xs font-semibold border border-white/10">📅 Shift Logging</span>
+                        <span class="px-4 py-1.5 bg-white/5 rounded-full text-xs font-semibold border border-white/10">💰 AU Tax Calc</span>
+                        <span class="px-4 py-1.5 bg-white/5 rounded-full text-xs font-semibold border border-white/10">🔒 100% Private</span>
                     </div>
-                    <div class="app-features">
-                        <span class="feature-tag">📅 Shift Logging</span>
-                        <span class="feature-tag">💰 Australian Tax Calculator</span>
-                        <span class="feature-tag">⏰ Penalty Rates</span>
-                        <span class="feature-tag">📊 Work History</span>
-                        <span class="feature-tag">🔒 100% Private</span>
-                        <span class="feature-tag">🇦🇺 Made for Australia</span>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://tjxlabs.github.io/ShiftTrakApp/" class="bg-white text-black px-6 py-3 rounded-xl font-bold text-center hover:bg-gray-200 transition">Learn More</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.shifttrack.shift_track" class="px-6 py-3 border border-white/20 rounded-xl font-bold text-center hover:bg-white/5 transition flex items-center justify-center gap-2">
+                            <i data-lucide="play" class="w-4 h-4"></i> Play Store
+                        </a>
                     </div>
-                    <div class="app-links">
-                        <a href="https://tjxlabs.github.io/ShiftTrakApp/" class="btn btn-primary">Learn More</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.shifttrack.shift_track" class="btn btn-secondary" target="_blank" rel="noopener">Get it on Google Play</a>
+                </div>
+                <div class="relative flex justify-center">
+                    <div class="w-64 h-[500px] bg-gray-800 rounded-[3rem] border-[8px] border-gray-900 shadow-2xl relative overflow-hidden floating">
+                        <div class="absolute inset-0 bg-gradient-to-b from-indigo-500/20 to-transparent"></div>
+                        <div class="mt-20 px-6">
+                            <div class="h-4 w-20 bg-white/20 rounded mb-4"></div>
+                            <div class="h-32 w-full bg-white/10 rounded-2xl mb-4"></div>
+                            <div class="h-32 w-full bg-white/5 rounded-2xl"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="coming-soon-section">
-            <div class="coming-soon-icon">🚀</div>
-            <h2>More Apps Coming Soon</h2>
-            <p>
-                I'm constantly working on new solutions to make work life easier. Stay tuned for more practical, 
-                well-crafted mobile apps designed with the same care and attention to detail as ShiftTrak.
+    <section class="py-24 px-6 text-center">
+        <div class="max-w-3xl mx-auto glass p-12 rounded-[3rem] relative overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-indigo-600/20 blur-[60px] rounded-full"></div>
+            <div class="text-5xl mb-6">🚀</div>
+            <h2 class="text-3xl font-bold mb-4 italic">Next up: More Solutions.</h2>
+            <p class="text-gray-400 text-lg font-light leading-relaxed">
+                I'm currently working on new tools designed with the same Australian-made care and attention to detail as ShiftTrak.
             </p>
         </div>
+    </section>
 
-        <footer>
-            <p><strong>TJX Labs</strong></p>
-            <p>Independent mobile app development • New South Wales, Australia</p>
-            <p style="margin-top: 1rem;">
-                Questions or feedback? <a href="mailto:tjxlabs@gmail.com" class="contact-link">Get in touch</a>
-            </p>
-            <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">
-                © 2026 TJX Labs. All rights reserved.
-            </p>
-        </footer>
-    </div>
+    <footer class="py-20 border-t border-white/5 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-left">
+                <h3 class="text-2xl font-black mb-2">TJX <span class="text-indigo-400">LABS</span></h3>
+                <p class="text-gray-500 text-sm">Independent mobile app development • NSW, Australia</p>
+            </div>
+            <div class="md:text-right">
+                <p class="text-gray-400 font-medium mb-4">Questions or feedback?</p>
+                <a href="mailto:tjxlabs@gmail.com" class="text-xl font-bold text-white border-b-2 border-indigo-500 hover:text-indigo-400 transition">Get in touch</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:row justify-between text-[10px] text-gray-600 uppercase tracking-[0.3em]">
+            <p>© 2026 TJX Labs. All rights reserved.</p>
+            <p class="mt-2 md:mt-0">Built for the Craft</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
