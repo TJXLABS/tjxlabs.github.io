@@ -1,43 +1,194 @@
-<div class="group relative">
-    <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-[3rem] blur opacity-10 group-hover:opacity-30 transition duration-1000"></div>
-    <div class="relative glass p-8 md:p-12 rounded-[3rem] grid md:grid-cols-2 gap-12 items-center">
-        <div>
-            <div class="flex items-center gap-4 mb-6">
-                <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-2xl flex items-center justify-center text-3xl shadow-lg text-white">🔥</div>
-                <div>
-                    <h3 class="text-3xl font-bold text-white">ConsistentMe</h3>
-                    <span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full uppercase tracking-tighter">Coming Soon</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TJX Labs | Mobile Apps Built with Purpose</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        
+        :root { font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: #050505; color: #fafafa; overflow-x: hidden; }
+
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .hero-gradient { background: radial-gradient(circle at 50% 0%, rgba(79, 70, 229, 0.15) 0%, transparent 50%); }
+        
+        .bento-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .bento-card:hover { transform: translateY(-8px); border-color: rgba(99, 102, 241, 0.4); background: rgba(255, 255, 255, 0.05); }
+
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0px); } }
+        .floating { animation: float 6s ease-in-out infinite; }
+        
+        .text-gradient { background: linear-gradient(to right, #fff 30%, #a5b4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="selection:bg-indigo-500/30">
+
+    <div class="fixed inset-0 -z-10">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-600/10 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600/10 blur-[120px] rounded-full"></div>
+    </div>
+
+    <nav class="sticky top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-3">
+            <div class="flex items-center gap-3 font-extrabold text-xl tracking-tighter">
+                <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                    <i data-lucide="box" class="text-black w-5 h-5"></i>
+                </div>
+                <span>TJX <span class="text-indigo-400">LABS</span></span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+                <a href="#about" class="hover:text-white transition">About</a>
+                <a href="#apps" class="hover:text-white transition">Apps</a>
+                <a href="mailto:tjxlabs@gmail.com" class="hover:text-white transition">Contact</a>
+            </div>
+            <a href="https://github.com/tjxlabs" class="bg-white text-black px-5 py-2 rounded-xl text-xs font-bold hover:scale-105 transition">GITHUB</a>
+        </div>
+    </nav>
+
+    <header class="relative pt-32 pb-20 px-6 hero-gradient text-center">
+        <div class="max-w-7xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-bold uppercase tracking-widest mb-8">
+                <i data-lucide="map-pin" class="w-3 h-3"></i> NSW, Australia
+            </div>
+            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-[1.1]">
+                Mobile Apps Built <br><span class="text-gradient">with Purpose.</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                Independent studio creating practical solutions for everyday work challenges. No corporate bloat—just clean, functional code.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#apps" class="bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-[0_0_40px_-10px_rgba(79,70,229,0.6)] transition">Explore Apps</a>
+                <div class="px-8 py-4 glass rounded-2xl font-bold text-lg flex items-center gap-2 justify-center">
+                    <i data-lucide="user" class="text-indigo-400 w-5 h-5"></i> Solo Indie Studio
                 </div>
             </div>
-            <p class="text-gray-300 text-lg mb-8 leading-relaxed">
-                Build better habits, one day at a time. Track streaks, earn badges, and stay consistent even on your worst days with our unique Emergency Mode.
-            </p>
-            
-            <div class="grid grid-cols-2 gap-4 mb-8">
-                <div class="bg-white/5 p-4 rounded-2xl border border-white/5">
-                    <p class="text-[10px] text-gray-500 uppercase font-black mb-1">Frequency</p>
-                    <p class="text-white font-bold text-sm">Daily / Multi-Completions</p>
-                </div>
-                <div class="bg-white/5 p-4 rounded-2xl border border-white/5">
-                    <p class="text-[10px] text-gray-500 uppercase font-black mb-1">Release</p>
-                    <p class="text-white font-bold text-sm">Q1 2026</p>
+        </div>
+    </header>
+
+    <section id="apps" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="flex items-end justify-between mb-16">
+            <div>
+                <h2 class="text-5xl font-black italic tracking-tighter uppercase">The Apps</h2>
+                <p class="text-gray-500 mt-2 font-medium">Tools to sharpen your daily workflow.</p>
+            </div>
+            <div class="hidden md:block h-px flex-1 bg-white/10 mx-10"></div>
+        </div>
+
+        <div class="flex flex-col gap-12 md:gap-20">
+            <div class="group relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-[3rem] blur opacity-10 group-hover:opacity-30 transition duration-1000"></div>
+                <div class="relative glass p-8 md:p-12 rounded-[3rem] grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-2xl flex items-center justify-center text-3xl shadow-lg">📊</div>
+                            <div>
+                                <h3 class="text-3xl font-bold text-white">ShiftTrak</h3>
+                                <span class="text-xs font-bold text-emerald-400 bg-emerald-400/10 px-3 py-1 rounded-full uppercase tracking-tighter">Live on Google Play</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                            The complete shift tracking solution for Australian workers. Track shifts, calculate earnings with penalty rates, and manage schedules with confidence.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/5">
+                                <p class="text-[10px] text-gray-500 uppercase font-black mb-1">Frequency</p>
+                                <p class="text-white font-bold text-sm">Multiple Daily Logs</p>
+                            </div>
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/5">
+                                <p class="text-[10px] text-gray-500 uppercase font-black mb-1">Status</p>
+                                <p class="text-white font-bold text-sm">Production Ready</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="https://tjxlabs.github.io/ShiftTrakApp/" class="bg-white text-black px-6 py-3 rounded-xl font-bold text-center hover:bg-gray-200 transition">Learn More</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.shifttrack.shift_track" class="px-6 py-3 border border-white/20 rounded-xl font-bold text-center hover:bg-white/5 transition flex items-center justify-center gap-2">
+                                <i data-lucide="play" class="w-4 h-4"></i> Get it Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative flex justify-center">
+                        <div class="w-64 h-[400px] bg-gray-800 rounded-[3rem] border-[8px] border-gray-900 shadow-2xl relative overflow-hidden floating">
+                            <div class="absolute inset-0 bg-gradient-to-b from-indigo-500/20 to-transparent"></div>
+                            <div class="mt-20 px-6">
+                                <div class="h-4 w-20 bg-white/20 rounded mb-4"></div>
+                                <div class="h-24 w-full bg-white/10 rounded-2xl mb-4"></div>
+                                <div class="h-24 w-full bg-white/5 rounded-2xl"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="flex flex-col sm:flex-row gap-4">
-                <a href="https://tjxlabs.github.io/ConsistentMe/" class="bg-white text-black px-6 py-3 rounded-xl font-bold text-center hover:bg-gray-200 transition">Learn More</a>
-                <div class="px-6 py-3 border border-white/10 bg-white/5 text-gray-500 rounded-xl font-bold text-center flex items-center justify-center gap-2 cursor-not-allowed">
-                    <i data-lucide="play" class="w-4 h-4 opacity-30"></i> Get it Now
+            <div class="group relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-[3rem] blur opacity-10 group-hover:opacity-30 transition duration-1000"></div>
+                <div class="relative glass p-8 md:p-12 rounded-[3rem] grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-2xl flex items-center justify-center text-3xl shadow-lg text-white">🔥</div>
+                            <div>
+                                <h3 class="text-3xl font-bold text-white">ConsistentMe</h3>
+                                <span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full uppercase tracking-tighter">Coming Soon</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                            Build better habits, one day at a time. Track streaks, earn badges, and stay consistent even on your worst days with our unique Emergency Mode.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/5">
+                                <p class="text-[10px] text-gray-500 uppercase font-black mb-1">Frequency</p>
+                                <p class="text-white font-bold text-sm">Daily / Multi-Completions</p>
+                            </div>
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/5">
+                                <p class="text-[10px] text-gray-500 uppercase font-black mb-1">Release</p>
+                                <p class="text-white font-bold text-sm">Q1 2026</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="https://tjxlabs.github.io/ConsistentMe/" class="bg-white text-black px-6 py-3 rounded-xl font-bold text-center hover:bg-gray-200 transition">Learn More</a>
+                            <div class="px-6 py-3 border border-white/10 bg-white/5 text-gray-500 rounded-xl font-bold text-center flex items-center justify-center gap-2 cursor-not-allowed">
+                                <i data-lucide="play" class="w-4 h-4 opacity-30"></i> Get it Now
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative flex justify-center opacity-40">
+                        <div class="w-64 h-[400px] bg-gray-900 rounded-[3rem] border-[8px] border-gray-950 shadow-2xl relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-b from-emerald-500/10 to-transparent"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <i data-lucide="lock" class="text-emerald-500/20 w-12 h-12"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="relative flex justify-center opacity-40">
-            <div class="w-64 h-[400px] bg-gray-900 rounded-[3rem] border-[8px] border-gray-950 shadow-2xl relative overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-b from-emerald-500/10 to-transparent"></div>
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <i data-lucide="lock" class="text-emerald-500/20 w-12 h-12"></i>
-                </div>
+    </section>
+
+    <footer class="py-20 border-t border-white/5 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-left">
+                <h3 class="text-2xl font-black mb-2 uppercase">TJX <span class="text-indigo-400">Labs</span></h3>
+                <p class="text-gray-500 text-sm">Independent mobile app development • NSW, Australia</p>
+            </div>
+            <div class="md:text-right">
+                <p class="text-gray-400 font-medium mb-4">Questions or feedback?</p>
+                <a href="mailto:tjxlabs@gmail.com" class="text-xl font-bold text-white border-b-2 border-indigo-500 hover:text-indigo-400 transition">Get in touch</a>
             </div>
         </div>
-    </div>
-</div>
+        <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:row justify-between text-[10px] text-gray-600 uppercase tracking-[0.3em]">
+            <p>© 2026 TJX Labs. All rights reserved.</p>
+            <p class="mt-2 md:mt-0">Built for the Craft</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
